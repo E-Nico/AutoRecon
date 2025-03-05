@@ -35,7 +35,8 @@ echo -e "$result_nmap"
 
 #if port 80
 echo -e "${MAGENTA}[*] SUBDOMAINS SCANS${NC}"
-resul_gobuster=gobuster dir -u http://$TARGET/ -w /use/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -x php,txt,html -b 301 --exclude-length 6609 -k
+#resul_gobuster=gobuster dir -u http://$TARGET/ -w /use/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -x php,txt,html -b 301 --exclude-length 6609 -k
+sudo uniscan -u http://$TARGET -qd
 echo -e "${YELLOW}[-] LANCEMENT DIRB${NC}"
 dirb http://$TARGET/
 echo -e "${YELLOW}[-] LANCEMENT FEROXBUSTER${NC}"
